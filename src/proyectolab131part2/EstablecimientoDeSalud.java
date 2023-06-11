@@ -11,8 +11,9 @@ import java.util.Scanner;
  * @author MiPC
  */
 public class EstablecimientoDeSalud {
-    private String nombre,direccion,sector,nivel,tipo;
-    public EstablecimientoDeSalud(String a,String b,String c,String d,String e){
+    private String nombre,direccion,sector,tipo;
+    private int nivel;
+    public EstablecimientoDeSalud(String a,String b,String c,int d,String e){
         nombre=a;
         direccion=b;
         sector=c;
@@ -40,10 +41,10 @@ public class EstablecimientoDeSalud {
     public void setSector(String sector) {
         this.sector = sector;
     }
-    public String getNivel() {
+    public int getNivel() {
         return nivel;
     }
-    public void setNivel(String nivel) {
+    public void setNivel(int nivel) {
         this.nivel = nivel;
     }
     public String getTipo() {
@@ -61,7 +62,7 @@ public class EstablecimientoDeSalud {
         System.out.println("Sector: ");
         sector=lee.nextLine();
         System.out.println("Nivel: ");
-        nivel=lee.nextLine();
+        nivel=lee.nextInt();
         System.out.println("Tipo: ");
         tipo=lee.nextLine();
     }

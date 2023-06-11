@@ -51,7 +51,7 @@ public class PilaM {
     
     public Macrodistrito eliminar ()
     {
-	Macrodistrito elem = new Macrodistrito ();
+	Macrodistrito elem = null;
 	if (!esvacia ())
 	{
 	    elem = v [tope];

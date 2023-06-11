@@ -14,8 +14,11 @@ public class Macrodistrito {
     private String nombre;
     private int id;
     private CCircularZ cz;
-    Macrodistrito(){
-        
+    
+    Macrodistrito(String a,int b,CCircularZ c){
+        nombre=a;
+        id=b;
+        cz=c;
     }
 
     public String getNombre() {

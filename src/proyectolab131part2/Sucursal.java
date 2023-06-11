@@ -42,6 +42,6 @@ public class Sucursal {
     }
     
     public void mostrar(){
-        System.out.println("<"+nomSucursal+" "+direccion+">");
+        System.out.println("            <"+nomSucursal+" "+direccion+">");
     }
 }

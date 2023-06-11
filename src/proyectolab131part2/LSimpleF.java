@@ -22,7 +22,7 @@ public class LSimpleF {
         this.p = p;
     }
     public void adiPrincipio(){
-        Farmacia f=new Farmacia();
+        Farmacia f=null;
         f.leer();
         NodoF nue=new NodoF();
         nue.setF(f);

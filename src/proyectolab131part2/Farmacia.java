@@ -11,10 +11,12 @@ import java.util.Scanner;
  * @author MiPC
  */
 public class Farmacia {
-    private String nombre,direccion,tipo;
+    private String nombre,tipo;
     private PilaS sucursales;
-    public Farmacia(){
-        
+    public Farmacia(String a,String b,PilaS c){
+        nombre=a;
+        tipo=b;
+        sucursales=c;
     }
     public String getNombre() {
         return nombre;
@@ -22,13 +24,6 @@ public class Farmacia {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public String getDireccion() {
-        return direccion;
-    }
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
     public String getTipo() {
         return tipo;
     }
@@ -50,10 +45,11 @@ public class Farmacia {
         Scanner lee=new Scanner(System.in);
         System.out.println("Nombre: ");
         nombre=lee.nextLine();
-        System.out.println("Direccion: ");
-        direccion=lee.nextLine();
+        System.out.println("Tipo: ");
+        tipo=lee.nextLine();
     }
     public void mostrar(){
-        System.out.println("        <"+nombre+" "+direccion+">");
+        System.out.println("        <"+nombre+" "+tipo+">");
+        sucursales.mostrar();
     }
 }

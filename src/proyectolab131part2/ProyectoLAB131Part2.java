@@ -14,7 +14,76 @@ public class ProyectoLAB131Part2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        LDobleE le1=new LDobleE();
+        EstablecimientoDeSalud e1= new EstablecimientoDeSalud("Pro Mujer","C. Canonigo Ayllon","ONGs",2,"Clinica");
+        EstablecimientoDeSalud e2= new EstablecimientoDeSalud("El Carmen","C. Canonigo A. Pza. el Carmen","ONGs",3,"Hospital");
+        EstablecimientoDeSalud e3= new EstablecimientoDeSalud("Bajo San Pedro","C. General Gonzales #1328","publico",1,"Hospital");
+        le1.adiFinal(e1); le1.adiFinal(e2); le1.adiFinal(e3);
+        
+        LDobleE le2=new LDobleE();
+        EstablecimientoDeSalud e4= new EstablecimientoDeSalud("Medi Health","Av. Sánchez Lima 2326","ONGs",1,"Hospital");
+        EstablecimientoDeSalud e5= new EstablecimientoDeSalud("Caja petrolera","Av. 6 de Agosto","ONGs",2,"Clinica");
+        EstablecimientoDeSalud e6= new EstablecimientoDeSalud("SS Universitario","Av. 6 de Agosto","privado",1,"Hospital");
+        le2.adiFinal(e1); le2.adiFinal(e2); le2.adiFinal(e3);
+        
+        LDobleE le3=new LDobleE();
+        EstablecimientoDeSalud e7= new EstablecimientoDeSalud("Arcoiris","C. 15 de abril","publico",2,"Hospital");
+        EstablecimientoDeSalud e8= new EstablecimientoDeSalud("La merced","C. Villa Aspiazu","publico",1,"Hospital");
+        EstablecimientoDeSalud e9= new EstablecimientoDeSalud("Caja petrolera","C. Miguel Aparicio","publico",1,"Clinica");
+        le3.adiFinal(e1); le3.adiFinal(e2); le3.adiFinal(e3);
+        
+        LSimpleF lf1 = new LSimpleF();
+        PilaS ps1 = new PilaS();
+        Sucursal s1=new Sucursal("central","avenida1");
+        ps1.adicionar(s1);
+        Farmacia f1=new Farmacia("La glorieta","publico",ps1);
+
+        PilaS ps2 = new PilaS();
+        Sucursal s2=new Sucursal("Plaza San Pedro","calle 2");
+        Sucursal s3=new Sucursal("Teleferico","calle 3");
+        ps2.adicionar(s2); ps2.adicionar(s3);
+        Farmacia f2=new Farmacia("Mi Farma","institucional",ps2);
+        
+        PilaS ps3 = new PilaS();
+        Sucursal s4=new Sucursal("San Pedro","calle 4");
+        Sucursal s5=new Sucursal("Rotonda","calle 7");
+        ps3.adicionar(s4); ps3.adicionar(s5);
+        Farmacia f3=new Farmacia("Angel Samuel","publico",ps3);
+        
+        lf1.adiPrincipio(f1); lf1.adiPrincipio(f2); lf1.adiPrincipio(f3);
+        
+        
+        LSimpleF lf2 = new LSimpleF();
+        PilaS ps4 = new PilaS();
+        Sucursal s6=new Sucursal("central","avenida 9");
+        ps4.adicionar(s1);
+        Farmacia f4=new Farmacia("Victoria","hospitalaria",ps4);
+
+        PilaS ps5 = new PilaS();
+        Sucursal s7=new Sucursal("Plaza España","calle 2");
+        Sucursal s8=new Sucursal("Plaza Avaroa","avenida 3");
+        ps5.adicionar(s2); ps5.adicionar(s3);
+        Farmacia f5=new Farmacia("Mi Farma","institucional",ps5);
+        
+        PilaS ps6 = new PilaS();
+        Sucursal s9=new Sucursal("Plaza España","avenida 4");
+        Sucursal s10=new Sucursal("6 de agosto","calle 7");
+        ps6.adicionar(s4); ps6.adicionar(s5);
+        Farmacia f6=new Farmacia("Beni","publico",ps6);
+        
+        lf2.adiPrincipio(f4); lf2.adiPrincipio(f5); lf2.adiPrincipio(f6);
+        
+        
+        CCircularZ cz1=new CCircularZ();
+        Zona z1=new Zona("San Pedro",lf1,le1,3455);
+        Zona z2=new Zona("Sopocachi",lf2,le2,2288);
+        cz1.adicionar(z1); cz1.adicionar(z2);
+        
+        
+        PilaM m1=new PilaM();
+        Macrodistrito ma1 = new Macrodistrito("Centro",15534,cz1);
+        m1.adicionar(ma1);
+        m1.mostrar();
     }
 
     //mostrar los hospitales y farmacias de la zona x
@@ -101,13 +170,13 @@ public class ProyectoLAB131Part2 {
                     LDobleE E = z.getLe();
                     NodoE e = E.getP();
                     while (e != null) {
-                        if (e.getE().getNivel().equals(1)) {
+                        if (e.getE().getNivel()==(1)) {
                             //array nivel1
                         }
-                        if (e.getE().getNivel().equals(2)){
+                        if (e.getE().getNivel()==(2)){
                             //array nivel 2
                         }
-                        if (e.getE().getNivel().equals(3)){
+                        if (e.getE().getNivel()==(3)){
                             //array nivel 3
                         }
                         e = e.getSig();
