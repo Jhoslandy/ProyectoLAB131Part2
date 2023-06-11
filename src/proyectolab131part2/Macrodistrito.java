@@ -13,9 +13,9 @@ import java.util.Scanner;
 public class Macrodistrito {
     private String nombre;
     private int id;
-    private CCircularZ cz;
+    private CSimpleZ cz;
     
-    Macrodistrito(String a,int b,CCircularZ c){
+    Macrodistrito(String a,int b,CSimpleZ c){
         nombre=a;
         id=b;
         cz=c;
@@ -37,15 +37,15 @@ public class Macrodistrito {
         this.id = id;
     }
 
-    public CCircularZ getCz() {
+    public CSimpleZ getCz() {
         return cz;
     }
 
-    public void setCz(CCircularZ cz) {
+    public void setCz(CSimpleZ cz) {
         this.cz = cz;
     }
     
-    public void leer(CCircularZ x){
+    public void leer(CSimpleZ x){
         Scanner lee=new Scanner(System.in);
         System.out.println("Nombre de MacroDis: ");
         nombre=lee.nextLine();

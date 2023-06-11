@@ -4,6 +4,9 @@
  */
 package proyectolab131part2;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /**
  *
  * @author XTREME GAMER
@@ -86,7 +89,7 @@ public class ProyectoLAB131Part2 {
         lf2.adiPrincipio(f5);
         lf2.adiPrincipio(f6);
 
-        CCircularZ cz1 = new CCircularZ();
+        CSimpleZ cz1 = new CSimpleZ();
         Zona z1 = new Zona("San Pedro", lf1, le1, 3455);
         Zona z2 = new Zona("Sopocachi", lf2, le2, 2288);
         cz1.adicionar(z1);
@@ -96,15 +99,29 @@ public class ProyectoLAB131Part2 {
         Macrodistrito ma1 = new Macrodistrito("Centro", 15534, cz1);
         m1.adicionar(ma1);
         m1.mostrar();
+        System.out.println("=======================ejer1=====================");
+        ejer1(m1,"San Pedro");
+        
+        System.out.println("=======================ejer2=====================");
+        ejer2(m1,"Mi Farma");
+        
+        System.out.println("=======================ejer3=====================");
+        ejer3(m1,"Centro");
+        
+        System.out.println("=======================ejer4=====================");
+        ejer4(m1,"Centro");
+        
+        System.out.println("=======================ejer4=====================");
+        ejer5(m1,3455);
     }
 
     //mostrar los hospitales y farmacias de la zona x
     public static void ejer1(PilaM M, String x) {
         PilaM pm = new PilaM();
-        CCircularZ cz = new CCircularZ();
+        CSimpleZ cz = new CSimpleZ();
         while (!M.esvacia()) {
             Macrodistrito maux = M.eliminar();
-            CCircularZ Z = maux.getCz();
+            CSimpleZ Z = maux.getCz();
             while (!Z.esvacia()) {
                 Zona zaux = Z.eliminar();
                 if (zaux.getNombre().equals(x)) {
@@ -121,7 +138,7 @@ public class ProyectoLAB131Part2 {
                         f = f.getSig();
                     }
                 }
-                Z.adicionar(zaux);
+                cz.adicionar(zaux);
             }
             Z.vaciar(cz);
             pm.adicionar(maux);
@@ -133,19 +150,19 @@ public class ProyectoLAB131Part2 {
     public static void ejer2(PilaM M, String x) {
         System.out.println("2.Contar cuantas sucursales tiene la farmacia " + x + " en la ciudad de La Paz");
         PilaM pm = new PilaM();
-        CCircularZ cz = new CCircularZ();
+        CSimpleZ cz = new CSimpleZ();
         PilaS ps = new PilaS();
         int c = 0;
         while (!M.esvacia()) {
             Macrodistrito m = M.eliminar();
-            CCircularZ Z = m.getCz();
+            CSimpleZ Z = m.getCz();
             while (!Z.esvacia()) {
                 Zona z = Z.eliminar();
                 LSimpleF F = z.getLf();
                 NodoF f = F.getP();
                 while (f != null) {
                     if (f.getF().getNombre().equals(x)) {
-                        System.out.println("Zona: " + z);
+                        System.out.println("Zona: " + z.getNombre());
                         c += f.getF().getSucursales().nroelem();
                         PilaS S = f.getF().getSucursales();
                         while (!S.esvacia()) {
@@ -171,12 +188,14 @@ public class ProyectoLAB131Part2 {
     //mostrar los centros de salud del macrodistrito x ordenado por niveles
     public static void ejer3(PilaM M, String x) {
         PilaM pm = new PilaM();
-        CCircularZ cz = new CCircularZ();
-
+        CSimpleZ cz = new CSimpleZ();
+        ArrayList<String> aux1=new ArrayList<String>();
+        ArrayList<String> aux2=new ArrayList<String>();
+        ArrayList<String> aux3=new ArrayList<String>();
         while (!M.esvacia()) {
             Macrodistrito m = M.eliminar();
             if (m.getNombre().equals(x)) {
-                CCircularZ Z = m.getCz();
+                CSimpleZ Z = m.getCz();
                 while (!Z.esvacia()) {
                     Zona z = Z.eliminar();
                     LDobleE E = z.getLe();
@@ -184,12 +203,15 @@ public class ProyectoLAB131Part2 {
                     while (e != null) {
                         if (e.getE().getNivel() == (1)) {
                             //array nivel1
+                            aux1.add(e.getE().getNombre());
                         }
                         if (e.getE().getNivel() == (2)) {
                             //array nivel 2
+                            aux2.add(e.getE().getNombre());
                         }
                         if (e.getE().getNivel() == (3)) {
                             //array nivel 3
+                            aux3.add(e.getE().getNombre());
                         }
                         e = e.getSig();
 
@@ -203,17 +225,28 @@ public class ProyectoLAB131Part2 {
         }
         M.vaciar(pm);
         //mostrar todos los arrays
+        mostrar(aux1);
+        mostrar(aux2);
+        mostrar(aux3);
+    }
+    
+    public static void mostrar(ArrayList<String> b){
+        Iterator<String> r=b.listIterator();
+        while(r.hasNext()){
+            String cadx=r.next();
+            System.out.println(cadx);
+        }
     }
 
     //verficar si existe alguna farmacia de tipo privado en el macrodistrito x
     public static void ejer4(PilaM M, String x) {
         PilaM pm = new PilaM();
-        CCircularZ cz = new CCircularZ();
+        CSimpleZ cz = new CSimpleZ();
         int c = 0;
         while (!M.esvacia()) {
             Macrodistrito m = M.eliminar();
             if (m.getNombre().equals(x)) {
-                CCircularZ Z = m.getCz();
+                CSimpleZ Z = m.getCz();
                 while (!Z.esvacia()) {
                     Zona z = Z.eliminar();
                     LSimpleF F = z.getLf();
@@ -243,13 +276,13 @@ public class ProyectoLAB131Part2 {
     //Muestrame que tipo de farmacias estan disponibles en la zona con idZona y
     public static void ejer5(PilaM M, int y) {
         PilaM pm = new PilaM();
-        CCircularZ cz = new CCircularZ();
+        CSimpleZ cz = new CSimpleZ();
         int n = 0;
         String[] tipos = new String[10];
         while (!M.esvacia()) {
             Macrodistrito m = M.eliminar();
-            CCircularZ Z = m.getCz();
-            int c = 0;
+            CSimpleZ Z = m.getCz();
+            
             while (!Z.esvacia()) {
                 Zona z = Z.eliminar();
                 if (z.getIdZona() == y) {
@@ -258,9 +291,16 @@ public class ProyectoLAB131Part2 {
                     while (f != null) {
                         String tipo = f.getF().getTipo();
                         //recorrer la lista, si no encuentra ese tipo, adicionar
+                        int c = 0;
+                        for (int i = 0; i <= n; i++) {
+                            if(tipo.equals(tipos[i])){
+                                c++;
+                            }
+                        }
                         if (c == 0) {
-                            tipos[n] = tipo;
                             n++;
+                            tipos[n-1] = tipo;
+                            //System.out.println(n);
                         }
                         f = f.getSig();
                     }
@@ -271,7 +311,7 @@ public class ProyectoLAB131Part2 {
             Z.vaciar(cz);
         }
         M.vaciar(pm);
-        for (int i = 0; i <= n; i++) {
+        for (int i = 0; i < n; i++) {
             System.out.println(tipos[i]);
         }
     }
