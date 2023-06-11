@@ -12,16 +12,16 @@ import java.util.Scanner;
  */
 public class Zona {
     private String nombre;
-    private LSimpleF le;
-    private LDobleE lf;
+    private LSimpleF lf;
+    private LDobleE le;
     private int idZona;
     public Zona(){
        
     }
     public Zona(String a,LSimpleF b,LDobleE c,int d){
         nombre=a;
-        le=b;
-        lf=c;
+        lf=b;
+        le=c;
         idZona=d;
     }
 
@@ -33,20 +33,20 @@ public class Zona {
         this.nombre = nombre;
     }
 
-    public LSimpleF getLe() {
-        return le;
-    }
-
-    public void setLe(LSimpleF le) {
-        this.le = le;
-    }
-
-    public LDobleE getLf() {
+    public LSimpleF getLf() {
         return lf;
     }
 
-    public void setLf(LDobleE lf) {
+    public void setLf(LSimpleF lf) {
         this.lf = lf;
+    }
+
+    public LDobleE getLe() {
+        return le;
+    }
+
+    public void setLe(LDobleE le) {
+        this.le = le;
     }
 
     public int getIdZona() {
@@ -56,7 +56,7 @@ public class Zona {
     public void setIdZona(int idZona) {
         this.idZona = idZona;
     }
-    public void leer(LSimpleF x,LDobleE y){
+    /*public void leer(LSimpleF x,LDobleE y){
         Scanner lee=new Scanner(System.in);
         System.out.println("Nombre: ");
         nombre=lee.nextLine();
@@ -64,7 +64,7 @@ public class Zona {
         idZona=lee.nextInt();
         lf=y;
         le=x;
-    }
+    }*/
     
     public void mostrar(){
         System.out.println("    ["+nombre+" "+idZona+"]");

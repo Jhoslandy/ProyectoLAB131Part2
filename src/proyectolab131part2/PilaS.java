@@ -13,10 +13,10 @@ public class PilaS {
     private Sucursal v[]=new Sucursal[max+1];
     private int tope;
     
-    PilaS(){
+    public PilaS(){
         tope=0;
     }
-    boolean esvacia ()
+    public boolean esvacia ()
     {
 	if (tope == 0)
 	    return (true);
@@ -24,21 +24,19 @@ public class PilaS {
     }
 
 
-    boolean esllena ()
+    public boolean esllena ()
     {
 	if (tope == max)
 	    return (true);
 	return (false);
     }
 
-/*
-    int nroelem ()
+    public int nroelem ()
     {
 	return (tope);
     }
-*/
 
-    void adicionar (Sucursal elem)
+    public void adicionar (Sucursal elem)
     {
 	if (!esllena ())
 	{
@@ -50,7 +48,7 @@ public class PilaS {
     }
 
     
-    Sucursal eliminar ()
+    public Sucursal eliminar ()
     {
 	Sucursal elem = null;
 	if (!esvacia ())
@@ -64,7 +62,7 @@ public class PilaS {
     }
     
 
-    void mostrar ()
+    public void mostrar ()
     {
 	Sucursal elem;
 	if (esvacia ())
@@ -116,7 +114,7 @@ public class PilaS {
 
 */
     
-    void vaciar (PilaS a)
+    public void vaciar (PilaS a)
     {
 	while (!a.esvacia ())
 	    adicionar (a.eliminar ());

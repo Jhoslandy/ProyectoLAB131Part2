@@ -14,10 +14,10 @@ public class PilaM {
     private Macrodistrito v[]=new Macrodistrito[max+1];
     private int tope;
     
-    PilaM(){
+    public PilaM(){
         tope=0;
     }
-    boolean esvacia ()
+    public boolean esvacia ()
     {
 	if (tope == 0)
 	    return (true);
@@ -25,21 +25,19 @@ public class PilaM {
     }
 
 
-    boolean esllena ()
+    public boolean esllena ()
     {
 	if (tope == max)
 	    return (true);
 	return (false);
     }
 
-/*
-    int nroelem ()
+    public int nroelem ()
     {
 	return (tope);
     }
-*/
 
-    void adicionar (Macrodistrito elem)
+    public void adicionar (Macrodistrito elem)
     {
 	if (!esllena ())
 	{
@@ -51,7 +49,7 @@ public class PilaM {
     }
 
     
-    Macrodistrito eliminar ()
+    public Macrodistrito eliminar ()
     {
 	Macrodistrito elem = new Macrodistrito ();
 	if (!esvacia ())
@@ -65,7 +63,7 @@ public class PilaM {
     }
     
 
-    void mostrar ()
+    public void mostrar ()
     {
 	Macrodistrito elem;
 	if (esvacia ())
@@ -116,12 +114,10 @@ public class PilaM {
     }
 
 */
-    /*
-    void vaciar (PilaM a)
+    public void vaciar (PilaM a)
     {
 	while (!a.esvacia ())
 	    adicionar (a.eliminar ());
 
     }
-    */
 }
