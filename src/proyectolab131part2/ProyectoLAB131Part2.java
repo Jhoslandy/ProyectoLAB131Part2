@@ -111,7 +111,7 @@ public class ProyectoLAB131Part2 {
         System.out.println("=======================ejer4=====================");
         ejer4(m1,"Centro");
         
-        System.out.println("=======================ejer4=====================");
+        System.out.println("=======================ejer5=====================");
         ejer5(m1,3455);
     }
 
@@ -120,28 +120,28 @@ public class ProyectoLAB131Part2 {
         PilaM pm = new PilaM();
         CSimpleZ cz = new CSimpleZ();
         while (!M.esvacia()) {
-            Macrodistrito maux = M.eliminar();
-            CSimpleZ Z = maux.getCz();
+            Macrodistrito m = M.eliminar();
+            CSimpleZ Z = m.getCz();
             while (!Z.esvacia()) {
-                Zona zaux = Z.eliminar();
-                if (zaux.getNombre().equals(x)) {
-                    LDobleE E = zaux.getLe();
+                Zona z = Z.eliminar();
+                if (z.getNombre().equals(x)) {
+                    LDobleE E = z.getLe();
                     NodoE e = E.getP();
                     while (e != null) {
                         e.getE().mostrar();
                         e = e.getSig();
                     }
-                    LSimpleF F = zaux.getLf();
+                    LSimpleF F = z.getLf();
                     NodoF f = F.getP();
                     while (f != null) {
                         f.getF().mostrar();
                         f = f.getSig();
                     }
                 }
-                cz.adicionar(zaux);
+                cz.adicionar(z);
             }
             Z.vaciar(cz);
-            pm.adicionar(maux);
+            pm.adicionar(m);
         }
         M.vaciar(pm);
     }
@@ -218,15 +218,17 @@ public class ProyectoLAB131Part2 {
                     }
                     cz.adicionar(z);
                 }
-                pm.adicionar(m);
                 Z.vaciar(cz);
             }
-
+            pm.adicionar(m);
         }
         M.vaciar(pm);
         //mostrar todos los arrays
+        System.out.println("Nivel 1:");
         mostrar(aux1);
+        System.out.println("Nivel 2:");
         mostrar(aux2);
+        System.out.println("Nivel 3:");
         mostrar(aux3);
     }
     
@@ -256,14 +258,12 @@ public class ProyectoLAB131Part2 {
                             c++;
                         }
                         f = f.getSig();
-
                     }
                     cz.adicionar(z);
                 }
-                pm.adicionar(m);
                 Z.vaciar(cz);
             }
-
+            pm.adicionar(m);
         }
         M.vaciar(pm);
         if (c != 0) {
@@ -282,7 +282,6 @@ public class ProyectoLAB131Part2 {
         while (!M.esvacia()) {
             Macrodistrito m = M.eliminar();
             CSimpleZ Z = m.getCz();
-            
             while (!Z.esvacia()) {
                 Zona z = Z.eliminar();
                 if (z.getIdZona() == y) {
@@ -314,10 +313,5 @@ public class ProyectoLAB131Part2 {
         for (int i = 0; i < n; i++) {
             System.out.println(tipos[i]);
         }
-    }
-
-    //
-    public static void ejer6() {
-
     }
 }
