@@ -14,74 +14,86 @@ public class ProyectoLAB131Part2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        LDobleE le1=new LDobleE();
-        EstablecimientoDeSalud e1= new EstablecimientoDeSalud("Pro Mujer","C. Canonigo Ayllon","ONGs",2,"Clinica");
-        EstablecimientoDeSalud e2= new EstablecimientoDeSalud("El Carmen","C. Canonigo A. Pza. el Carmen","ONGs",3,"Hospital");
-        EstablecimientoDeSalud e3= new EstablecimientoDeSalud("Bajo San Pedro","C. General Gonzales #1328","publico",1,"Hospital");
-        le1.adiFinal(e1); le1.adiFinal(e2); le1.adiFinal(e3);
-        
-        LDobleE le2=new LDobleE();
-        EstablecimientoDeSalud e4= new EstablecimientoDeSalud("Medi Health","Av. Sánchez Lima 2326","ONGs",1,"Hospital");
-        EstablecimientoDeSalud e5= new EstablecimientoDeSalud("Caja petrolera","Av. 6 de Agosto","ONGs",2,"Clinica");
-        EstablecimientoDeSalud e6= new EstablecimientoDeSalud("SS Universitario","Av. 6 de Agosto","privado",1,"Hospital");
-        le2.adiFinal(e1); le2.adiFinal(e2); le2.adiFinal(e3);
-        
-        LDobleE le3=new LDobleE();
-        EstablecimientoDeSalud e7= new EstablecimientoDeSalud("Arcoiris","C. 15 de abril","publico",2,"Hospital");
-        EstablecimientoDeSalud e8= new EstablecimientoDeSalud("La merced","C. Villa Aspiazu","publico",1,"Hospital");
-        EstablecimientoDeSalud e9= new EstablecimientoDeSalud("Caja petrolera","C. Miguel Aparicio","publico",1,"Clinica");
-        le3.adiFinal(e1); le3.adiFinal(e2); le3.adiFinal(e3);
-        
+        LDobleE le1 = new LDobleE();
+        EstablecimientoDeSalud e1 = new EstablecimientoDeSalud("Pro Mujer", "C. Canonigo Ayllon", "ONGs", 2, "Clinica");
+        EstablecimientoDeSalud e2 = new EstablecimientoDeSalud("El Carmen", "C. Canonigo A. Pza. el Carmen", "ONGs", 3, "Hospital");
+        EstablecimientoDeSalud e3 = new EstablecimientoDeSalud("Bajo San Pedro", "C. General Gonzales #1328", "publico", 1, "Hospital");
+        le1.adiFinal(e1);
+        le1.adiFinal(e2);
+        le1.adiFinal(e3);
+
+        LDobleE le2 = new LDobleE();
+        EstablecimientoDeSalud e4 = new EstablecimientoDeSalud("Medi Health", "Av. Sánchez Lima 2326", "ONGs", 1, "Hospital");
+        EstablecimientoDeSalud e5 = new EstablecimientoDeSalud("Caja petrolera", "Av. 6 de Agosto", "ONGs", 2, "Clinica");
+        EstablecimientoDeSalud e6 = new EstablecimientoDeSalud("SS Universitario", "Av. 6 de Agosto", "privado", 1, "Hospital");
+        le2.adiFinal(e4);
+        le2.adiFinal(e5);
+        le2.adiFinal(e6);
+
+        LDobleE le3 = new LDobleE();
+        EstablecimientoDeSalud e7 = new EstablecimientoDeSalud("Arcoiris", "C. 15 de abril", "publico", 2, "Hospital");
+        EstablecimientoDeSalud e8 = new EstablecimientoDeSalud("La merced", "C. Villa Aspiazu", "publico", 1, "Hospital");
+        EstablecimientoDeSalud e9 = new EstablecimientoDeSalud("Caja petrolera", "C. Miguel Aparicio", "publico", 1, "Clinica");
+        le3.adiFinal(e7);
+        le3.adiFinal(e8);
+        le3.adiFinal(e9);
+
         LSimpleF lf1 = new LSimpleF();
         PilaS ps1 = new PilaS();
-        Sucursal s1=new Sucursal("central","avenida1");
+        Sucursal s1 = new Sucursal("central", "avenida1");
         ps1.adicionar(s1);
-        Farmacia f1=new Farmacia("La glorieta","publico",ps1);
+        Farmacia f1 = new Farmacia("La glorieta", "publico", ps1);
 
         PilaS ps2 = new PilaS();
-        Sucursal s2=new Sucursal("Plaza San Pedro","calle 2");
-        Sucursal s3=new Sucursal("Teleferico","calle 3");
-        ps2.adicionar(s2); ps2.adicionar(s3);
-        Farmacia f2=new Farmacia("Mi Farma","institucional",ps2);
-        
+        Sucursal s2 = new Sucursal("Plaza San Pedro", "calle 2");
+        Sucursal s3 = new Sucursal("Teleferico", "calle 3");
+        ps2.adicionar(s2);
+        ps2.adicionar(s3);
+        Farmacia f2 = new Farmacia("Mi Farma", "institucional", ps2);
+
         PilaS ps3 = new PilaS();
-        Sucursal s4=new Sucursal("San Pedro","calle 4");
-        Sucursal s5=new Sucursal("Rotonda","calle 7");
-        ps3.adicionar(s4); ps3.adicionar(s5);
-        Farmacia f3=new Farmacia("Angel Samuel","publico",ps3);
-        
-        lf1.adiPrincipio(f1); lf1.adiPrincipio(f2); lf1.adiPrincipio(f3);
-        
-        
+        Sucursal s4 = new Sucursal("San Pedro", "calle 4");
+        Sucursal s5 = new Sucursal("Rotonda", "calle 7");
+        ps3.adicionar(s4);
+        ps3.adicionar(s5);
+        Farmacia f3 = new Farmacia("Angel Samuel", "publico", ps3);
+
+        lf1.adiPrincipio(f1);
+        lf1.adiPrincipio(f2);
+        lf1.adiPrincipio(f3);
+
         LSimpleF lf2 = new LSimpleF();
         PilaS ps4 = new PilaS();
-        Sucursal s6=new Sucursal("central","avenida 9");
-        ps4.adicionar(s1);
-        Farmacia f4=new Farmacia("Victoria","hospitalaria",ps4);
+        Sucursal s6 = new Sucursal("central", "avenida 9");
+        ps4.adicionar(s6);
+        Farmacia f4 = new Farmacia("Victoria", "hospitalaria", ps4);
 
         PilaS ps5 = new PilaS();
-        Sucursal s7=new Sucursal("Plaza España","calle 2");
-        Sucursal s8=new Sucursal("Plaza Avaroa","avenida 3");
-        ps5.adicionar(s2); ps5.adicionar(s3);
-        Farmacia f5=new Farmacia("Mi Farma","institucional",ps5);
-        
+        Sucursal s7 = new Sucursal("Plaza España", "calle 2");
+        Sucursal s8 = new Sucursal("Plaza Avaroa", "avenida 3");
+        ps5.adicionar(s7);
+        ps5.adicionar(s8);
+        Farmacia f5 = new Farmacia("Mi Farma", "institucional", ps5);
+
         PilaS ps6 = new PilaS();
-        Sucursal s9=new Sucursal("Plaza España","avenida 4");
-        Sucursal s10=new Sucursal("6 de agosto","calle 7");
-        ps6.adicionar(s4); ps6.adicionar(s5);
-        Farmacia f6=new Farmacia("Beni","publico",ps6);
-        
-        lf2.adiPrincipio(f4); lf2.adiPrincipio(f5); lf2.adiPrincipio(f6);
-        
-        
-        CCircularZ cz1=new CCircularZ();
-        Zona z1=new Zona("San Pedro",lf1,le1,3455);
-        Zona z2=new Zona("Sopocachi",lf2,le2,2288);
-        cz1.adicionar(z1); cz1.adicionar(z2);
-        
-        
-        PilaM m1=new PilaM();
-        Macrodistrito ma1 = new Macrodistrito("Centro",15534,cz1);
+        Sucursal s9 = new Sucursal("Plaza España", "avenida 4");
+        Sucursal s10 = new Sucursal("6 de agosto", "calle 7");
+        ps6.adicionar(s9);
+        ps6.adicionar(s10);
+        Farmacia f6 = new Farmacia("Beni", "publico", ps6);
+
+        lf2.adiPrincipio(f4);
+        lf2.adiPrincipio(f5);
+        lf2.adiPrincipio(f6);
+
+        CCircularZ cz1 = new CCircularZ();
+        Zona z1 = new Zona("San Pedro", lf1, le1, 3455);
+        Zona z2 = new Zona("Sopocachi", lf2, le2, 2288);
+        cz1.adicionar(z1);
+        cz1.adicionar(z2);
+
+        PilaM m1 = new PilaM();
+        Macrodistrito ma1 = new Macrodistrito("Centro", 15534, cz1);
         m1.adicionar(ma1);
         m1.mostrar();
     }
@@ -160,7 +172,7 @@ public class ProyectoLAB131Part2 {
     public static void ejer3(PilaM M, String x) {
         PilaM pm = new PilaM();
         CCircularZ cz = new CCircularZ();
-        
+
         while (!M.esvacia()) {
             Macrodistrito m = M.eliminar();
             if (m.getNombre().equals(x)) {
@@ -170,13 +182,13 @@ public class ProyectoLAB131Part2 {
                     LDobleE E = z.getLe();
                     NodoE e = E.getP();
                     while (e != null) {
-                        if (e.getE().getNivel()==(1)) {
+                        if (e.getE().getNivel() == (1)) {
                             //array nivel1
                         }
-                        if (e.getE().getNivel()==(2)){
+                        if (e.getE().getNivel() == (2)) {
                             //array nivel 2
                         }
-                        if (e.getE().getNivel()==(3)){
+                        if (e.getE().getNivel() == (3)) {
                             //array nivel 3
                         }
                         e = e.getSig();
@@ -194,10 +206,10 @@ public class ProyectoLAB131Part2 {
     }
 
     //verficar si existe alguna farmacia de tipo privado en el macrodistrito x
-    public static void ejer4(PilaM M,String x) {
+    public static void ejer4(PilaM M, String x) {
         PilaM pm = new PilaM();
         CCircularZ cz = new CCircularZ();
-        int c=0;
+        int c = 0;
         while (!M.esvacia()) {
             Macrodistrito m = M.eliminar();
             if (m.getNombre().equals(x)) {
@@ -207,7 +219,7 @@ public class ProyectoLAB131Part2 {
                     LSimpleF F = z.getLf();
                     NodoF f = F.getP();
                     while (f != null) {
-                        if(f.getF().getTipo().equals("Privado")){
+                        if (f.getF().getTipo().equals("Privado")) {
                             c++;
                         }
                         f = f.getSig();
@@ -221,17 +233,47 @@ public class ProyectoLAB131Part2 {
 
         }
         M.vaciar(pm);
-        if(c!=0){
+        if (c != 0) {
             System.out.println("Existe");
-        }
-        else{
+        } else {
             System.out.println("No existe");
         }
     }
 
-    //mostrar los hospitales y farmacias de la zona x
-    public static void ejer5() {
-
+    //Muestrame que tipo de farmacias estan disponibles en la zona con idZona y
+    public static void ejer5(PilaM M, int y) {
+        PilaM pm = new PilaM();
+        CCircularZ cz = new CCircularZ();
+        int n = 0;
+        String[] tipos = new String[10];
+        while (!M.esvacia()) {
+            Macrodistrito m = M.eliminar();
+            CCircularZ Z = m.getCz();
+            int c = 0;
+            while (!Z.esvacia()) {
+                Zona z = Z.eliminar();
+                if (z.getIdZona() == y) {
+                    LSimpleF F = z.getLf();
+                    NodoF f = F.getP();
+                    while (f != null) {
+                        String tipo = f.getF().getTipo();
+                        //recorrer la lista, si no encuentra ese tipo, adicionar
+                        if (c == 0) {
+                            tipos[n] = tipo;
+                            n++;
+                        }
+                        f = f.getSig();
+                    }
+                }
+                cz.adicionar(z);
+            }
+            pm.adicionar(m);
+            Z.vaciar(cz);
+        }
+        M.vaciar(pm);
+        for (int i = 0; i <= n; i++) {
+            System.out.println(tipos[i]);
+        }
     }
 
     //
