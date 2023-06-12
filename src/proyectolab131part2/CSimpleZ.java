@@ -15,6 +15,7 @@ public class CSimpleZ {
     CSimpleZ(){
         ini=fin=0;
     }
+    
     boolean esvacia()
     {
 	if (ini == 0 && fin == 0)
