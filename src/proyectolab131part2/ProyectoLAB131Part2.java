@@ -171,14 +171,10 @@ public class ProyectoLAB131Part2 {
         
         System.out.println("=======================ejer3=====================");
         ejer3(m1,"Centro");
-        
         System.out.println("=======================ejer4=====================");
-        ejer4(m1,"Centro");
-        System.out.println(ejer4Recur(m1,"Centro"));
-        
-        
+        ejer4(m1,3455);
         System.out.println("=======================ejer5=====================");
-        ejer5(m1,3455);
+        ejer5(m1,"Centro");
     }
 
     //mostrar los hospitales y farmacias de la zona x
@@ -305,72 +301,8 @@ public class ProyectoLAB131Part2 {
             System.out.println(cadx);
         }
     }
-
-    //verficar si existe alguna farmacia de tipo privado en el macrodistrito x
-    public static void ejer4(PilaM M, String x) {
-        PilaM pm = new PilaM();
-        CSimpleZ cz = new CSimpleZ();
-        int c = 0;
-        while (!M.esvacia()) {
-            Macrodistrito m = M.eliminar();
-            if (m.getNombre().equals(x)) {
-                CSimpleZ Z = m.getCz();
-                while (!Z.esvacia()) {
-                    Zona z = Z.eliminar();
-                    LSimpleF F = z.getLf();
-                    NodoF f = F.getP();
-                    while (f != null) {
-                        if (f.getF().getTipo().equals("Privado")) {
-                            c++;
-                        }
-                        f = f.getSig();
-                    }
-                    cz.adicionar(z);
-                }
-                Z.vaciar(cz);
-            }
-            pm.adicionar(m);
-        }
-        M.vaciar(pm);
-        if (c != 0) {
-            System.out.println("Existe");
-        } else {
-            System.out.println("No existe");
-        }
-    }
-    
-    public static boolean ejer4Recur(PilaM M, String x) {
-        if(!M.esvacia()){
-            Macrodistrito mx=M.eliminar();
-            if(mx.getNombre().equals(x)){
-                return EntrarColaZonas(mx.getCz());
-            }
-            return ejer4Recur(M,x);
-        }
-        return false;
-    }
-    public static boolean EntrarColaZonas(CSimpleZ a) {
-        if(!a.esvacia()){
-            Zona zx=a.eliminar();
-            if(verificarFarmacia(zx.getLf().getP()))
-                return true;
-            return EntrarColaZonas(a);
-        }
-        return false;
-    }
-    
-    public static boolean verificarFarmacia(NodoF r) {
-        if(r!=null){
-            if(r.getF().getTipo().equals("Privado"))
-                return true;
-            return verificarFarmacia(r.getSig());
-        }
-        return false;
-    }
-    
-
     //Muestrame que tipo de farmacias estan disponibles en la zona con idZona y
-    public static void ejer5(PilaM M, int y) {
+    public static void ejer4(PilaM M, int y) {
         PilaM pm = new PilaM();
         CSimpleZ cz = new CSimpleZ();
         int n = 0;
@@ -409,5 +341,72 @@ public class ProyectoLAB131Part2 {
         for (int i = 0; i < n; i++) {
             System.out.println(tipos[i]);
         }
+    }
+    //verficar si existe alguna farmacia de tipo privado en el macrodistrito x
+    /*public static void ejer5(PilaM M, String x) {
+        PilaM pm = new PilaM();
+        CSimpleZ cz = new CSimpleZ();
+        int c = 0;
+        while (!M.esvacia()) {
+            Macrodistrito m = M.eliminar();
+            if (m.getNombre().equals(x)) {
+                CSimpleZ Z = m.getCz();
+                while (!Z.esvacia()) {
+                    Zona z = Z.eliminar();
+                    LSimpleF F = z.getLf();
+                    NodoF f = F.getP();
+                    while (f != null) {
+                        if (f.getF().getTipo().equals("Privado")) {
+                            c++;
+                        }
+                        f = f.getSig();
+                    }
+                    cz.adicionar(z);
+                }
+                Z.vaciar(cz);
+            }
+            pm.adicionar(m);
+        }
+        M.vaciar(pm);
+        if (c != 0) {
+            System.out.println("Existe");
+        } else {
+            System.out.println("No existe");
+        }
+    }*/
+    public static void ejer5(PilaM M,String x){
+        if(ejer5Recur(M,x))
+            System.out.println("Existe");
+        else
+            System.out.println("No existe");
+    }
+    
+    public static boolean ejer5Recur(PilaM M, String x) {
+        if(!M.esvacia()){
+            Macrodistrito mx=M.eliminar();
+            if(mx.getNombre().equals(x)){
+                return EntrarColaZonas(mx.getCz());
+            }
+            return ejer5Recur(M,x);
+        }
+        return false;
+    }
+    public static boolean EntrarColaZonas(CSimpleZ a) {
+        if(!a.esvacia()){
+            Zona zx=a.eliminar();
+            if(verificarFarmacia(zx.getLf().getP()))
+                return true;
+            return EntrarColaZonas(a);
+        }
+        return false;
+    }
+    
+    public static boolean verificarFarmacia(NodoF r) {
+        if(r!=null){
+            if(r.getF().getTipo().equals("Privado"))
+                return true;
+            return verificarFarmacia(r.getSig());
+        }
+        return false;
     }
 }
