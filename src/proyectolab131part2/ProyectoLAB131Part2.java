@@ -40,6 +40,14 @@ public class ProyectoLAB131Part2 {
         le3.adiFinal(e7);
         le3.adiFinal(e8);
         le3.adiFinal(e9);
+        
+        LDobleE le4 = new LDobleE();
+        EstablecimientoDeSalud e10 = new EstablecimientoDeSalud("Virgen de Copacabana", "Av. de la Oliva", "publico", 2, "Hospital");
+        EstablecimientoDeSalud e11 = new EstablecimientoDeSalud("Centro Bajo San Antonio", "C. R. Castrillo", "privado", 3, "Centro de Salud");
+        EstablecimientoDeSalud e12 = new EstablecimientoDeSalud("Centro Copacabana", "Av. oleoducto", "publico", 3, "Centro de Salud");
+        le4.adiFinal(e10);
+        le4.adiFinal(e11);
+        le4.adiFinal(e12);
 
         LSimpleF lf1 = new LSimpleF();
         PilaS ps1 = new PilaS();
@@ -88,16 +96,72 @@ public class ProyectoLAB131Part2 {
         lf2.adiPrincipio(f4);
         lf2.adiPrincipio(f5);
         lf2.adiPrincipio(f6);
+        
+        
+        LSimpleF lf3 = new LSimpleF();
+        PilaS ps7 = new PilaS();
+        Sucursal s11 = new Sucursal("villa Fatima", "av Nueva america");
+        Sucursal s12 = new Sucursal("las delicias", "plza del Maestro");
+        ps7.adicionar(s11); ps7.adicionar(s12);
+        Farmacia f7 = new Farmacia("Bolivia", "publico", ps7);
+
+        PilaS ps8 = new PilaS();
+        Sucursal s13 = new Sucursal("Villa Fatima", "av Conzata");
+        Sucursal s14 = new Sucursal("Tejada Zorsano", "plaza Villaroel");
+        Sucursal s15 = new Sucursal("Central", "av Nueva america");
+        ps8.adicionar(s13);
+        ps8.adicionar(s14);
+        ps8.adicionar(s15);
+        Farmacia f8 = new Farmacia("Ave Maria", "publico", ps8);
+
+        PilaS ps9 = new PilaS();
+        Sucursal s16 = new Sucursal("central", "plaza Arandia");
+        ps9.adicionar(s16);
+        Farmacia f9 = new Farmacia("Nazareth", "publico", ps9);
+
+        lf3.adiPrincipio(f7);
+        lf3.adiPrincipio(f8);
+        lf3.adiPrincipio(f9);
+        
+        LSimpleF lf4 = new LSimpleF();
+        PilaS ps10 = new PilaS();
+        Sucursal s17 = new Sucursal("Munaypata", "la florida");
+        Sucursal s18 = new Sucursal("San antonio", "av. Republica");
+        Sucursal s19 = new Sucursal("Tejar", "C. Bustillos");
+        ps10.adicionar(s17); ps10.adicionar(s18); ps10.adicionar(s19);
+        Farmacia f10 = new Farmacia("Bolivia", "publico", ps10);
+
+        PilaS ps11 = new PilaS();
+        Sucursal s20 = new Sucursal("El tejar", "Cancha El Tejar");
+        Sucursal s21 = new Sucursal("San antonio", "av. Republica");
+        ps11.adicionar(s20);
+        ps11.adicionar(s21);
+        Farmacia f11 = new Farmacia("Mi Farma", "publico", ps11);
+
+        PilaS ps12 = new PilaS();
+        Sucursal s22 = new Sucursal("central", "C. Lima");
+        ps12.adicionar(s22);
+        Farmacia f12 = new Farmacia("MediCup", "publico", ps12);
+
+        lf4.adiPrincipio(f10);
+        lf4.adiPrincipio(f11);
+        lf4.adiPrincipio(f12);
 
         CSimpleZ cz1 = new CSimpleZ();
         Zona z1 = new Zona("San Pedro", lf1, le1, 3455);
         Zona z2 = new Zona("Sopocachi", lf2, le2, 2288);
+        CSimpleZ cz2 = new CSimpleZ();
+        Zona z3 = new Zona("Villa Fatima", lf3, le3, 2288);
+        Zona z4 = new Zona("Villa Copacabana", lf4, le4, 2288);
         cz1.adicionar(z1);
         cz1.adicionar(z2);
+        cz2.adicionar(z3);
+        cz2.adicionar(z4);
 
         PilaM m1 = new PilaM();
         Macrodistrito ma1 = new Macrodistrito("Centro", 15534, cz1);
-        m1.adicionar(ma1);
+        Macrodistrito ma2 = new Macrodistrito("Max Paredes", 77124, cz2);
+        m1.adicionar(ma1); m1.adicionar(ma2);
         m1.mostrar();
         System.out.println("=======================ejer1=====================");
         ejer1(m1,"San Pedro");
