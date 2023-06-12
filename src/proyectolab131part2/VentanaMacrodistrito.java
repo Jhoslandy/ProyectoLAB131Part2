@@ -38,6 +38,8 @@ public class VentanaMacrodistrito extends javax.swing.JFrame {
 
         //actualizarTabla();
     }
+    
+    
     /*
     private void actualizarTabla() {
         // Limpiar el modelo de tabla
@@ -51,6 +53,8 @@ public class VentanaMacrodistrito extends javax.swing.JFrame {
         }
     }
     */
+    
+    
     /*
     public void actualizarTabla(){
         

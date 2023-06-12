@@ -174,6 +174,7 @@ public class ProyectoLAB131Part2 {
         
         System.out.println("=======================ejer4=====================");
         ejer4(m1,"Centro");
+        System.out.println(ejer4Recur(m1,"Centro"));
         
         System.out.println("=======================ejer5=====================");
         ejer5(m1,3455);
@@ -336,6 +337,36 @@ public class ProyectoLAB131Part2 {
             System.out.println("No existe");
         }
     }
+    
+    public static boolean ejer4Recur(PilaM M, String x) {
+        if(!M.esvacia()){
+            Macrodistrito mx=M.eliminar();
+            if(mx.getNombre().equals(x)){
+                return EntrarColaZonas(mx.getCz());
+            }
+            return ejer4Recur(M,x);
+        }
+        return false;
+    }
+    public static boolean EntrarColaZonas(CSimpleZ a) {
+        if(!a.esvacia()){
+            Zona zx=a.eliminar();
+            if(verificarFarmacia(zx.getLf().getP()))
+                return true;
+            return EntrarColaZonas(a);
+        }
+        return false;
+    }
+    
+    public static boolean verificarFarmacia(NodoF r) {
+        if(r!=null){
+            if(r.getF().getTipo().equals("Privado"))
+                return true;
+            return verificarFarmacia(r.getSig());
+        }
+        return false;
+    }
+    
 
     //Muestrame que tipo de farmacias estan disponibles en la zona con idZona y
     public static void ejer5(PilaM M, int y) {
