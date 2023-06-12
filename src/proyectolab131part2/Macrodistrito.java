@@ -57,6 +57,7 @@ public class Macrodistrito {
         cz=x;
     }
     
+    
     public void mostrar(){
         System.out.println("["+nombre+" "+id+"]");
         cz.mostrar();
