@@ -151,8 +151,8 @@ public class ProyectoLAB131Part2 {
         Zona z1 = new Zona("San Pedro", lf1, le1, 3455);
         Zona z2 = new Zona("Sopocachi", lf2, le2, 2288);
         CSimpleZ cz2 = new CSimpleZ();
-        Zona z3 = new Zona("Villa Fatima", lf3, le3, 2288);
-        Zona z4 = new Zona("Villa Copacabana", lf4, le4, 2288);
+        Zona z3 = new Zona("Villa Fatima", lf3, le3, 3322);
+        Zona z4 = new Zona("Villa Copacabana", lf4, le4, 5677);
         cz1.adicionar(z1);
         cz1.adicionar(z2);
         cz2.adicionar(z3);
